@@ -10,8 +10,10 @@ import UIKit
 
 class MovieSearchViewController: MSBaseViewController {
 
+    // MARK: - View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 }
