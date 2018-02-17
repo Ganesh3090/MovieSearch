@@ -24,18 +24,24 @@ struct MovieSearchParameter {
 
 class MSServiceFetcher: NSObject {
     
+    var defaultSession = URLSession(configuration: .default)
+
+    private var dataTask: URLSessionDataTask?
+    
     /// Fetch the data from server using given base url and api key from `MSConfiguration`
     ///
     /// - Parameters:
     ///   - request: The request parameters
-    ///   - session: Instance of `URLSession`. Used for unit tests case only
+    ///   - session: Instance of `URLSession`. Used for unit tests cases only
     ///   - completion: The movie result. `nil` if there is any error while fetching or parsing the data
-    func fetchSearchResult(request: MovieSearchRequest, session: URLSession = URLSession.shared, completion: @escaping (_ movieList: [MovieDetails]?) -> ()) {
+    func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ movieList: [MovieDetails]?) -> ()) {
+        self.dataTask?.cancel()
+        
         let urlString = MSConfiguration.baseURl + request.stringByAppendingAllParameters()
         
         guard let url = URL(string: urlString) else { return }
         
-        session.dataTask(with: url) { (jsonData, response, error) in
+        self.dataTask = defaultSession.dataTask(with: url) { jsonData, response, error in
             
             if let jsonError = error {
                 print(jsonError.localizedDescription)
@@ -51,5 +57,6 @@ class MSServiceFetcher: NSObject {
                 completion(movieList)
             }
         }
+        dataTask?.resume()
     }
 }

@@ -31,9 +31,9 @@ class MovieDetailsTests: XCTestCase {
         XCTAssertEqual(movie.voteAverage, 0)
         XCTAssertEqual(movie.popularity, 0.0)
         XCTAssertEqual(movie.adult, false)
-        
+        XCTAssertEqual(movie.originalLanguage, .unknown)
+
         XCTAssertNil(movie.posterPath)
-        XCTAssertNil(movie.originalLanguage)
         XCTAssertNil(movie.backdropPath)
         XCTAssertNil(movie.genreIds)
     }

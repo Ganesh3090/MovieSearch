@@ -8,13 +8,18 @@
 
 import UIKit
 
+enum MSColorStyle: Int {
+    case backgraund
+    case theme
+}
+
 extension UIColor {
     
     static let border = UIColor(actualRed: 242, actualGreen: 242, actualBlue: 242)
     
     static let background = UIColor(actualRed: 242, actualGreen: 242, actualBlue: 242)
     
-    static let Theme = UIColor.green
+    static let theme = UIColor(actualRed: 74, actualGreen: 212, actualBlue: 137)
 
     static let headerText = UIColor.black
 

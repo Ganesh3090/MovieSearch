@@ -15,6 +15,7 @@ class MSBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = String(localizedKey: "Movie Search")
         self.view.backgroundColor = UIColor.background
     }
 }

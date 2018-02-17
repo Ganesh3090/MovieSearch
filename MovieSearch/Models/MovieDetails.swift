@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum MovieLanguage: String {
+    case english = "en"
+    case turki = "tr"
+    case unknown = "unknown"
+}
+
 struct MovieDetails {
 
     // The movie title
@@ -47,7 +53,7 @@ struct MovieDetails {
     var backdropPath: String?
     
     /// The original language of movie
-    var originalLanguage: String?
+    var originalLanguage = MovieLanguage.unknown
     
     /// Creates instance of `MovieDetails`
     ///
