@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="495" id="KGk-i7-Jjw" customClass="MovieSearchTableViewCell" customModule="MovieSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="546" height="495"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="546" height="494.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qV-t4-C42">
+                        <rect key="frame" x="8" y="4" width="530" height="486.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="280" translatesAutoresizingMaskIntoConstraints="NO" id="ern-zN-xuP">
+                                <rect key="frame" x="0.0" y="0.0" width="530" height="297"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ern-zN-xuP" secondAttribute="height" multiplier="500:280" id="zt4-xe-eRg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edp-ON-PW5" customClass="MSLabel" customModule="MovieSearch" customModuleProvider="target">
+                                <rect key="frame" x="8" y="249" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.45340103293911316" green="0.44368214927469485" blue="0.59198915155440412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="N0S-pu-4PN"/>
+                                    <constraint firstAttribute="width" constant="40" id="lY5-jk-7HU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="gO0-Fs-XyP" customClass="MSVoteView" customModule="MovieSearch" customModuleProvider="target">
+                                <rect key="frame" x="402" y="223" width="120" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="106" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="09M-Zl-TMT">
+                                <rect key="frame" x="16" y="313.5" width="498" height="157"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="21" text="Batman" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMs-by-PWP" customClass="MSLabel" customModule="MovieSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="498" height="99"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="21" text="Released 23 Feb 2018" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqH-Tt-0WB" customClass="MSLabel" customModule="MovieSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="107" width="498" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="21" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdT-c2-e6v" customClass="MSLabel" customModule="MovieSearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="136" width="498" height="21"/>
+                                        <string key="text">United States President Lex Luthor uses the oncoming trajectory of a Kryptonite meteor to frame Superman and declare a $1 billion bounty on the heads of the Man of Steel and his ‘partner in crime’, Batman. Heroes and villains alike launch a relentless pursuit of Superman and Batman, who must unite— and recruit help—to try and stave off the action-packed onslaught, stop the meteor Luthors plot.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ern-zN-xuP" firstAttribute="bottom" secondItem="edp-ON-PW5" secondAttribute="bottom" constant="8" id="5hU-Lw-vhq"/>
+                            <constraint firstAttribute="trailing" secondItem="ern-zN-xuP" secondAttribute="trailing" id="8ai-sz-t1s"/>
+                            <constraint firstAttribute="bottom" secondItem="09M-Zl-TMT" secondAttribute="bottom" constant="16" id="EKA-IT-skm"/>
+                            <constraint firstItem="ern-zN-xuP" firstAttribute="top" secondItem="8qV-t4-C42" secondAttribute="top" id="HhD-id-CRW"/>
+                            <constraint firstItem="ern-zN-xuP" firstAttribute="leading" secondItem="8qV-t4-C42" secondAttribute="leading" id="MdN-St-muV"/>
+                            <constraint firstItem="edp-ON-PW5" firstAttribute="leading" secondItem="ern-zN-xuP" secondAttribute="leading" constant="8" id="g4s-6q-7uN"/>
+                            <constraint firstItem="ern-zN-xuP" firstAttribute="trailing" secondItem="gO0-Fs-XyP" secondAttribute="trailing" constant="8" id="gXl-9t-Cym"/>
+                            <constraint firstItem="09M-Zl-TMT" firstAttribute="top" secondItem="ern-zN-xuP" secondAttribute="bottom" constant="16" id="hHg-gN-9h5"/>
+                            <constraint firstAttribute="trailing" secondItem="09M-Zl-TMT" secondAttribute="trailing" constant="16" id="iTM-OQ-Z84"/>
+                            <constraint firstItem="ern-zN-xuP" firstAttribute="bottom" secondItem="gO0-Fs-XyP" secondAttribute="bottom" constant="8" id="lDz-BF-IyS"/>
+                            <constraint firstItem="09M-Zl-TMT" firstAttribute="leading" secondItem="8qV-t4-C42" secondAttribute="leading" constant="16" id="od9-Q4-i4i"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8qV-t4-C42" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="OuY-Mg-iTI"/>
+                    <constraint firstAttribute="trailing" secondItem="8qV-t4-C42" secondAttribute="trailing" constant="8" id="Pfl-pk-DKV"/>
+                    <constraint firstItem="8qV-t4-C42" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="cUQ-Qu-BuR"/>
+                    <constraint firstAttribute="bottom" secondItem="8qV-t4-C42" secondAttribute="bottom" constant="4" id="i7F-xe-uAv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="adultLabel" destination="edp-ON-PW5" id="Yxy-uP-45H"/>
+                <outlet property="containerView" destination="8qV-t4-C42" id="6mn-hQ-0xl"/>
+                <outlet property="movieOverviewLabel" destination="VdT-c2-e6v" id="BqU-RM-IYA"/>
+                <outlet property="moviePosterImageView" destination="ern-zN-xuP" id="SIO-dJ-zFa"/>
+                <outlet property="nameLabel" destination="lMs-by-PWP" id="9iI-Xo-djg"/>
+                <outlet property="releaseDateLabel" destination="MqH-Tt-0WB" id="22l-cc-BQJ"/>
+                <outlet property="voteView" destination="gO0-Fs-XyP" id="uAm-ge-2pf"/>
+            </connections>
+            <point key="canvasLocation" x="42" y="-80.5"/>
+        </tableViewCell>
+    </objects>
+</document>
