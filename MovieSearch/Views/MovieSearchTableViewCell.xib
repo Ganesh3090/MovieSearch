@@ -39,6 +39,10 @@
                                     <constraint firstAttribute="width" secondItem="ern-zN-xuP" secondAttribute="height" multiplier="500:280" id="zt4-xe-eRg"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="A04-rh-F5e">
+                                <rect key="frame" x="247" y="130.5" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edp-ON-PW5" customClass="MSLabel" customModule="MovieSearch" customModuleProvider="target">
                                 <rect key="frame" x="8" y="249" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.45340103293911316" green="0.44368214927469485" blue="0.59198915155440412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,7 +95,9 @@
                             <constraint firstItem="09M-Zl-TMT" firstAttribute="top" secondItem="ern-zN-xuP" secondAttribute="bottom" constant="16" id="hHg-gN-9h5"/>
                             <constraint firstAttribute="trailing" secondItem="09M-Zl-TMT" secondAttribute="trailing" constant="16" id="iTM-OQ-Z84"/>
                             <constraint firstItem="ern-zN-xuP" firstAttribute="bottom" secondItem="gO0-Fs-XyP" secondAttribute="bottom" constant="8" id="lDz-BF-IyS"/>
+                            <constraint firstItem="A04-rh-F5e" firstAttribute="centerY" secondItem="ern-zN-xuP" secondAttribute="centerY" id="n3e-ui-AwZ"/>
                             <constraint firstItem="09M-Zl-TMT" firstAttribute="leading" secondItem="8qV-t4-C42" secondAttribute="leading" constant="16" id="od9-Q4-i4i"/>
+                            <constraint firstItem="A04-rh-F5e" firstAttribute="centerX" secondItem="ern-zN-xuP" secondAttribute="centerX" id="vgs-aT-gNe"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -104,6 +110,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicator" destination="A04-rh-F5e" id="v8B-f9-rZ9"/>
                 <outlet property="adultLabel" destination="edp-ON-PW5" id="Yxy-uP-45H"/>
                 <outlet property="containerView" destination="8qV-t4-C42" id="6mn-hQ-0xl"/>
                 <outlet property="movieOverviewLabel" destination="VdT-c2-e6v" id="BqU-RM-IYA"/>

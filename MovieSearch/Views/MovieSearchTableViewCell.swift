@@ -12,6 +12,7 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
 
     static let className = "MovieSearchTableViewCell"
     
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var adultLabel: MSLabel!
     @IBOutlet private weak var movieOverviewLabel: MSLabel!
     @IBOutlet private weak var releaseDateLabel: MSLabel!
@@ -30,6 +31,7 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
         self.adultLabel.layer.borderColor = UIColor.white.cgColor
         self.adultLabel.layer.borderWidth = 1.0
         self.adultLabel.clipsToBounds = true
+        self.moviePosterImageView.backgroundColor = UIColor.theme
     }
     
     func setMoiveDetails(details: Movie) {
@@ -40,17 +42,22 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
         self.voteView.setVoteCount(count: details.voteCount, avarage: details.voteAverage)
         self.adultLabel.isHidden = !details.adult
         
+        self.activityIndicator.stopAnimating()
         if let backdropPath = details.backdropPath {
             let imageURLString = MSConfiguration.imageBaseURL + backdropPath
-            
+            self.moviePosterImageView.contentMode = .scaleToFill
             if let cachedImage = MovieImageCache.shared.imageForUrl(urlString: imageURLString) {
                 self.moviePosterImageView.image = cachedImage
             } else {
+                self.activityIndicator.startAnimating()
+                self.moviePosterImageView.image = nil
                 MSServiceFetcher.downloadImage(urlString: imageURLString) { (_) in
+                    
                 }
             }
         } else {
-            self.moviePosterImageView.image = nil
+            self.moviePosterImageView.contentMode = .center
+            self.moviePosterImageView.image = UIImage(named: "placeholder")
         }
     }
 }
