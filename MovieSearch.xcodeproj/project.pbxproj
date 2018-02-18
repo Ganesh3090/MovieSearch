@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4520DFAB20397E4A002E472E /* MSServiceFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520DFAA20397E4A002E472E /* MSServiceFetcherTests.swift */; };
+		4520DFAD203990CE002E472E /* DataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520DFAC203990CE002E472E /* DataParserTests.swift */; };
+		4520DFB120399193002E472E /* UIViewController+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520DFB020399193002E472E /* UIViewController+Extra.swift */; };
 		452FE192203866AB00FE8847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452FE191203866AB00FE8847 /* AppDelegate.swift */; };
 		452FE197203866AB00FE8847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452FE195203866AB00FE8847 /* Main.storyboard */; };
 		452FE199203866AB00FE8847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452FE198203866AB00FE8847 /* Assets.xcassets */; };
@@ -31,10 +34,14 @@
 		453373D220389ACB007EF2B2 /* MSVoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453373D120389ACB007EF2B2 /* MSVoteView.xib */; };
 		453373D420389DE1007EF2B2 /* String+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D320389DE1007EF2B2 /* String+Extra.swift */; };
 		453373D62038C34B007EF2B2 /* MovieSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D52038C34B007EF2B2 /* MovieSearchResult.swift */; };
+		459920A42039939D006863BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459920A32039939D006863BC /* Localizable.strings */; };
 		45E7B343203922ED001B568B /* RescentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B342203922ED001B568B /* RescentSearch.swift */; };
 		45E7B346203925E5001B568B /* RescentSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */; };
 		45E7B347203925E5001B568B /* RescentSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */; };
 		45E7B34920393263001B568B /* MovieImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B34820393263001B568B /* MovieImageCache.swift */; };
+		45E7B34B203939D8001B568B /* MovieSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B34A203939D8001B568B /* MovieSearchManager.swift */; };
+		45E7B34D20394614001B568B /* MSRefeshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B34C20394614001B568B /* MSRefeshControl.swift */; };
+		45E7B34F20394654001B568B /* MSRefeshControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7B34E20394654001B568B /* MSRefeshControl.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4520DFAA20397E4A002E472E /* MSServiceFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSServiceFetcherTests.swift; sourceTree = "<group>"; };
+		4520DFAC203990CE002E472E /* DataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParserTests.swift; sourceTree = "<group>"; };
+		4520DFB020399193002E472E /* UIViewController+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extra.swift"; sourceTree = "<group>"; };
 		452FE18E203866AB00FE8847 /* MovieSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452FE191203866AB00FE8847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452FE196203866AB00FE8847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,10 +95,14 @@
 		453373D120389ACB007EF2B2 /* MSVoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSVoteView.xib; sourceTree = "<group>"; };
 		453373D320389DE1007EF2B2 /* String+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extra.swift"; sourceTree = "<group>"; };
 		453373D52038C34B007EF2B2 /* MovieSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResult.swift; sourceTree = "<group>"; };
+		459920A32039939D006863BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		45E7B342203922ED001B568B /* RescentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearch.swift; sourceTree = "<group>"; };
 		45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearchTableViewCell.swift; sourceTree = "<group>"; };
 		45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RescentSearchTableViewCell.xib; sourceTree = "<group>"; };
 		45E7B34820393263001B568B /* MovieImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageCache.swift; sourceTree = "<group>"; };
+		45E7B34A203939D8001B568B /* MovieSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchManager.swift; sourceTree = "<group>"; };
+		45E7B34C20394614001B568B /* MSRefeshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSRefeshControl.swift; sourceTree = "<group>"; };
+		45E7B34E20394654001B568B /* MSRefeshControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSRefeshControl.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +160,7 @@
 				452FE1CF20386BF100FE8847 /* WebServices */,
 				452FE1C82038691400FE8847 /* Categories */,
 				452FE191203866AB00FE8847 /* AppDelegate.swift */,
+				459920A32039939D006863BC /* Localizable.strings */,
 				452FE195203866AB00FE8847 /* Main.storyboard */,
 				452FE198203866AB00FE8847 /* Assets.xcassets */,
 				452FE19A203866AB00FE8847 /* LaunchScreen.storyboard */,
@@ -159,6 +174,8 @@
 			children = (
 				452FE1CD20386A5700FE8847 /* MovieDetailsTests.swift */,
 				453373C3203888A8007EF2B2 /* MovieSearchRequestTests.swift */,
+				4520DFAA20397E4A002E472E /* MSServiceFetcherTests.swift */,
+				4520DFAC203990CE002E472E /* DataParserTests.swift */,
 				452FE1A8203866AB00FE8847 /* Info.plist */,
 			);
 			path = MovieSearchTests;
@@ -188,6 +205,7 @@
 				452FE1C4203868DA00FE8847 /* Movie.swift */,
 				453373D52038C34B007EF2B2 /* MovieSearchResult.swift */,
 				45E7B342203922ED001B568B /* RescentSearch.swift */,
+				45E7B34A203939D8001B568B /* MovieSearchManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +216,7 @@
 				452FE1C92038692300FE8847 /* UIColor+Extra.swift */,
 				453373CF20389725007EF2B2 /* UIView+Extra.swift */,
 				453373D320389DE1007EF2B2 /* String+Extra.swift */,
+				4520DFB020399193002E472E /* UIViewController+Extra.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -224,6 +243,8 @@
 				453373C720388AE9007EF2B2 /* MSLabel.swift */,
 				453373CD203894D1007EF2B2 /* MSVoteView.swift */,
 				453373D120389ACB007EF2B2 /* MSVoteView.xib */,
+				45E7B34C20394614001B568B /* MSRefeshControl.swift */,
+				45E7B34E20394654001B568B /* MSRefeshControl.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,7 +367,9 @@
 				45E7B347203925E5001B568B /* RescentSearchTableViewCell.xib in Resources */,
 				452FE19C203866AB00FE8847 /* LaunchScreen.storyboard in Resources */,
 				453373D220389ACB007EF2B2 /* MSVoteView.xib in Resources */,
+				45E7B34F20394654001B568B /* MSRefeshControl.xib in Resources */,
 				452FE199203866AB00FE8847 /* Assets.xcassets in Resources */,
+				459920A42039939D006863BC /* Localizable.strings in Resources */,
 				453373CC20388C93007EF2B2 /* MovieSearchTableViewCell.xib in Resources */,
 				452FE197203866AB00FE8847 /* Main.storyboard in Resources */,
 			);
@@ -381,6 +404,7 @@
 				453373CB20388C93007EF2B2 /* MovieSearchTableViewCell.swift in Sources */,
 				453373C0203875A5007EF2B2 /* MovieSearchRequest.swift in Sources */,
 				452FE1C7203868EF00FE8847 /* MSBaseViewController.swift in Sources */,
+				45E7B34B203939D8001B568B /* MovieSearchManager.swift in Sources */,
 				453373D62038C34B007EF2B2 /* MovieSearchResult.swift in Sources */,
 				453373BE20387352007EF2B2 /* MSConstants.swift in Sources */,
 				453373D420389DE1007EF2B2 /* String+Extra.swift in Sources */,
@@ -388,7 +412,9 @@
 				452FE1C5203868DA00FE8847 /* Movie.swift in Sources */,
 				452FE1CA2038692300FE8847 /* UIColor+Extra.swift in Sources */,
 				45E7B34920393263001B568B /* MovieImageCache.swift in Sources */,
+				45E7B34D20394614001B568B /* MSRefeshControl.swift in Sources */,
 				452FE1CC203869AD00FE8847 /* MovieSearchViewController.swift in Sources */,
+				4520DFB120399193002E472E /* UIViewController+Extra.swift in Sources */,
 				453373C620388AB4007EF2B2 /* MSBaseTableViewCell.swift in Sources */,
 				453373C820388AE9007EF2B2 /* MSLabel.swift in Sources */,
 				453373C2203878FB007EF2B2 /* DataParser.swift in Sources */,
@@ -399,7 +425,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4520DFAB20397E4A002E472E /* MSServiceFetcherTests.swift in Sources */,
 				453373C4203888A8007EF2B2 /* MovieSearchRequestTests.swift in Sources */,
+				4520DFAD203990CE002E472E /* DataParserTests.swift in Sources */,
 				452FE1CE20386A5700FE8847 /* MovieDetailsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

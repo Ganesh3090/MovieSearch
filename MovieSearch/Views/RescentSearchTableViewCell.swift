@@ -17,6 +17,7 @@ class RescentSearchTableViewCell: MSBaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        self.backgroundColor = UIColor.white
     }
     
     var searchTitle: String? {

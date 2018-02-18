@@ -24,6 +24,9 @@ struct MovieSearchParameter {
 
 class MSServiceFetcher: NSObject {
     
+    /// Service base URL. Marked internal for unit test cases
+    var baseURL = MSConfiguration.baseURL
+    
     var defaultSession = URLSession(configuration: .default)
 
     private var dataTask: URLSessionDataTask?
@@ -36,9 +39,11 @@ class MSServiceFetcher: NSObject {
     func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ result: MovieSearchResult?) -> ()) {
         self.dataTask?.cancel()
         
-        let urlString = MSConfiguration.baseURL + request.stringByAppendingAllParameters()
+        let urlString = self.baseURL + request.stringByAppendingAllParameters()
         
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: urlString) else {
+            return
+        }
         
         self.dataTask = defaultSession.dataTask(with: url) { jsonData, response, error in
             
@@ -48,7 +53,10 @@ class MSServiceFetcher: NSObject {
                 return
             }
             
-            guard let data = jsonData else { return }
+            guard let data = jsonData else {
+                completion(nil)
+                return
+            }
             
             let result = DataParser.parseMovieSearchJSONData(data: data)
             

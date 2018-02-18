@@ -13,7 +13,8 @@ struct SearchResultKey {
     static let totalPages = "total_pages"
     static let totalResult = "total_results"
     static let results = "results"
-    
+    static let statusCode = "status_code"
+
     // Prevent init
     private init() { }
 }
@@ -50,9 +51,19 @@ class DataParser: NSObject {
     class func parseMovieSearchJSONData(data: Data) -> MovieSearchResult? {
      
         do {
-            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] else {
+                print("Error while parsing the JSON data")
+                return nil
+            }
             
             var result = MovieSearchResult()
+            
+            result.statusCode = json[SearchResultKey.statusCode] as? Int
+
+            if result.statusCode != nil {
+                /// Something went wrong. Like invalid API key
+                return result
+            }
             
             result.numberOfPages = json[SearchResultKey.totalPages] as? Int ?? 0
             result.pageNumber = json[SearchResultKey.pageNamber] as? Int ?? 0

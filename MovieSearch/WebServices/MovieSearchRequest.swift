@@ -40,7 +40,7 @@ struct MovieSearchRequest {
         
         urlString.append(MovieSearchParameter.apiKey + "=" + MSConfiguration.apiKey)
         urlString.append("&")
-        urlString.append(MovieSearchParameter.query + "=" + self.searchKey)
+        urlString.append(MovieSearchParameter.query + "=" + self.searchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)
         urlString.append("&")
         urlString.append(MovieSearchParameter.pageNumber + "=" + String(self.pageNumber))
         

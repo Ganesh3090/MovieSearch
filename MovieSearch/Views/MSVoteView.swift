@@ -40,9 +40,9 @@ class MSVoteView: UIView {
         self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
        
         if count > 0 {
-            self.voteLabel.text =  String(count) + " " + String(localizedKey: "votes")
+            self.voteLabel.text =  String(count) + " " + String(localizedKey: "VOTES")
         } else {
-            self.voteLabel.text =  String(localizedKey: "no votes")
+            self.voteLabel.text =  String(localizedKey: "NO_VOTES")
         }
         let averageInPercent = Int(avarage * 10)
         self.voteAvarageLabel.text = String(averageInPercent) + "%"
