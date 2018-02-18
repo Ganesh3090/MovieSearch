@@ -72,9 +72,14 @@ class MovieSearchViewController: MSBaseViewController {
     }
     
     override func keyboardWillShow(rect: CGRect) {
+        
+        // Need space at bottom and top for tableview content
         var newInsets = type(of: self).defaultTableViewInsets
         newInsets.bottom += rect.height
         self.tableView.contentInset = newInsets
+        
+        newInsets = .zero
+        newInsets.bottom += rect.height
         self.tableView.scrollIndicatorInsets = newInsets
     }
     
@@ -214,7 +219,9 @@ extension MovieSearchViewController: UIScrollViewDelegate {
             self.fetchSearchResult(searchKey: MovieSearchManager.shared.currentSearchText,
                                    saveResult: false,
                                    isBottomRefresh: true)
-        } else if !MovieSearchManager.shared.nextPageAvaiable() && self.tableView.tableFooterView != self.searchEndLabel {
+        } else if !MovieSearchManager.shared.nextPageAvaiable() &&
+            self.tableView.tableFooterView != self.searchEndLabel &&
+            MovieSearchManager.shared.movieResult.count > 0 {
             self.tableView.tableFooterView = self.searchEndLabel
         }
     }
