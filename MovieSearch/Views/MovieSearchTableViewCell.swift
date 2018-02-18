@@ -50,7 +50,14 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
         
         self.activityIndicator.stopAnimating()
         if let backdropPath = details.backdropPath {
-            let imageURLString = MSConfiguration.imageBaseURL + backdropPath
+            var imageURLString: String
+            
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                imageURLString = MSConfiguration.imageBaseURL + MSConfiguration.w500 + backdropPath
+            } else {
+                imageURLString = MSConfiguration.imageBaseURL + MSConfiguration.w185 + backdropPath
+            }
+            
             self.moviePosterImageView.contentMode = .scaleToFill
             if let cachedImage = MovieImageCache.shared.imageForUrl(urlString: imageURLString) {
                 self.moviePosterImageView.image = cachedImage
