@@ -55,6 +55,7 @@ class MovieSearchManager {
         self.searchResult = nil
         self.currentPage = 1
         self.currentSearchText = ""
+        MovieImageCache.shared.removeAllObjects()
     }
     
     /// Add new fetched result into the movie list array

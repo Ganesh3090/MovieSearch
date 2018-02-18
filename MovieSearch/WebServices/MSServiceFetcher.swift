@@ -44,17 +44,22 @@ class MSServiceFetcher: NSObject {
         guard let url = URL(string: urlString) else {
             return
         }
-        
+        print("Fetching data: " + url.absoluteString)
         self.dataTask = defaultSession.dataTask(with: url) { jsonData, response, error in
             
             if let jsonError = error {
-                print(jsonError.localizedDescription)
-                completion(nil)
+                print("Error while fetching: " + jsonError.localizedDescription)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
                 return
             }
             
             guard let data = jsonData else {
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                print("Failled to download json data")
                 return
             }
             

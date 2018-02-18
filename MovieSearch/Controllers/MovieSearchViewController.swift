@@ -9,12 +9,17 @@
 import UIKit
 
 class MovieSearchViewController: MSBaseViewController {
+
+    static let defaultTableViewInsets = UIEdgeInsetsMake(16.0, 0.0, 16.0, 0.0)
     
+    // Threshold from bottom of tableView
+    static let threshold: CGFloat = 100.0
+
     // MARK: - Variables
 
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            self.tableView.contentInset = UIEdgeInsetsMake(16.0, 0.0, 16.0, 0.0)
+            self.tableView.contentInset = type(of: self).defaultTableViewInsets
         }
     }
     
@@ -36,6 +41,15 @@ class MovieSearchViewController: MSBaseViewController {
         }
     }
     
+    private lazy var searchEndLabel: MSLabel = {
+        let label = MSLabel(frame: CGRect(x: 0.0, y: 0.0, width: self.tableView.frame.width, height: 50.0))
+        
+        label.text = String(localizedKey: "LAST_ROW")
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
     private lazy var serviceFetcher = MSServiceFetcher()
     
     private lazy var searchController = UISearchController(searchResultsController: nil)
@@ -50,6 +64,23 @@ class MovieSearchViewController: MSBaseViewController {
         self.setUpSearchBar()
         
         self.tableView.tableFooterView = nil
+    }
+    
+    override func keyboardWillHide() {
+        self.tableView.contentInset = type(of: self).defaultTableViewInsets
+        self.tableView.scrollIndicatorInsets = .zero
+    }
+    
+    override func keyboardWillShow(rect: CGRect) {
+        
+        // Need space at bottom and top for tableview content
+        var newInsets = type(of: self).defaultTableViewInsets
+        newInsets.bottom += rect.height
+        self.tableView.contentInset = newInsets
+        
+        newInsets = .zero
+        newInsets.bottom += rect.height
+        self.tableView.scrollIndicatorInsets = newInsets
     }
     
     // MARK: - Methods
@@ -142,7 +173,10 @@ extension MovieSearchViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setMoiveDetails(details: MovieSearchManager.shared.movieResult[indexPath.row])
+        if indexPath.row < MovieSearchManager.shared.movieResult.count {
+            cell.setMoiveDetails(details: MovieSearchManager.shared.movieResult[indexPath.row])
+        }
+        
         return cell
     }
     
@@ -173,12 +207,22 @@ extension MovieSearchViewController: UITableViewDelegate {
 
 extension MovieSearchViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y + scrollView.frame.size.height == scrollView.contentSize.height {
-            if !self.isSearchInProgress && MovieSearchManager.shared.nextPageAvaiable() {
-                self.fetchSearchResult(searchKey: MovieSearchManager.shared.currentSearchText,
-                                       saveResult: false,
-                                       isBottomRefresh: true)
-            }
+        guard !self.isSearchBarActive else { return }
+        
+        let contentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
+        
+        if !self.isSearchInProgress &&
+            MovieSearchManager.shared.nextPageAvaiable() &&
+            maximumOffset - contentOffset <= type(of: self).threshold {
+            self.isSearchInProgress = true
+            self.fetchSearchResult(searchKey: MovieSearchManager.shared.currentSearchText,
+                                   saveResult: false,
+                                   isBottomRefresh: true)
+        } else if !MovieSearchManager.shared.nextPageAvaiable() &&
+            self.tableView.tableFooterView != self.searchEndLabel &&
+            MovieSearchManager.shared.movieResult.count > 0 {
+            self.tableView.tableFooterView = self.searchEndLabel
         }
     }
 }
@@ -189,6 +233,7 @@ extension MovieSearchViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.isSearchBarActive = true
+        self.tableView.tableFooterView = nil
         self.fetchRescentSearches()
         self.tableView.reloadData()
     }
