@@ -14,7 +14,7 @@ enum MovieLanguage: String {
     case unknown = "unknown"
 }
 
-struct Movie {
+class Movie {
 
     // The movie title
     var title = ""
@@ -60,6 +60,9 @@ struct Movie {
     
     /// The Movie release date in string format
     var releaseDateString: String?
+    
+    /// Set `true` when image downloading is in progress
+    var isDownloadingInProgress = false
     
     /// Creates instance of `Movie`
     ///

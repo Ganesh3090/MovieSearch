@@ -72,6 +72,11 @@ class MSServiceFetcher: NSObject {
         dataTask?.resume()
     }
     
+    /// Download the image from server for given url and save into temporary storage
+    ///
+    /// - Parameters:
+    ///   - urlString: The image url string to download the image
+    ///   - completion: After downloaidng informs the coller
     class func downloadImage(urlString: String, completion: @escaping (_ image: UIImage?) -> Void) {
         if let cachedImage = MovieImageCache.shared.imageForUrl(urlString: urlString) {
             completion(cachedImage)

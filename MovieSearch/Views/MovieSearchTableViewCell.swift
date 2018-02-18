@@ -57,8 +57,11 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
             } else {
                 self.activityIndicator.startAnimating()
                 self.moviePosterImageView.image = nil
-                MSServiceFetcher.downloadImage(urlString: imageURLString) { (_) in
-                    
+                if !details.isDownloadingInProgress {
+                    details.isDownloadingInProgress = true
+                    MSServiceFetcher.downloadImage(urlString: imageURLString) { (_) in
+                        details.isDownloadingInProgress = false
+                    }
                 }
             }
         } else {
