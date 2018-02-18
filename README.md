@@ -12,4 +12,6 @@
 
 
 ## Screenshots
-![Screenshots](suggestions.png)
+
+![Screenshots1](search.png)
+![Screenshots2](suggestions.png)

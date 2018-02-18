@@ -17,3 +17,5 @@
 "NO_VOTES" = "No votes";
 "MOVIE_SEARCH" = "Movie Search";
 "LAST_ROW" = "Your search ended here";
+"RELEASE_DATE_UNKNOWN" = "Release date unknown";
+"RELEASED_ON" = "Released on ";

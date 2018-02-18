@@ -33,10 +33,12 @@
 		453373D020389725007EF2B2 /* UIView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373CF20389725007EF2B2 /* UIView+Extra.swift */; };
 		453373D220389ACB007EF2B2 /* MSVoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453373D120389ACB007EF2B2 /* MSVoteView.xib */; };
 		453373D420389DE1007EF2B2 /* String+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D320389DE1007EF2B2 /* String+Extra.swift */; };
-		453373D62038C34B007EF2B2 /* MovieSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D52038C34B007EF2B2 /* MovieSearchResult.swift */; };
+		453373D62038C34B007EF2B2 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D52038C34B007EF2B2 /* MovieList.swift */; };
 		459920A42039939D006863BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459920A32039939D006863BC /* Localizable.strings */; };
 		459920A62039A02B006863BC /* MovieSearchManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459920A52039A02B006863BC /* MovieSearchManagerTests.swift */; };
 		459920AA2039AF8B006863BC /* MovieImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459920A92039AF8B006863BC /* MovieImageCacheTests.swift */; };
+		459920AC2039E439006863BC /* Date+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459920AB2039E439006863BC /* Date+Extra.swift */; };
+		459920B02039F231006863BC /* MovieListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459920AF2039F231006863BC /* MovieListTests.swift */; };
 		45E7B343203922ED001B568B /* RescentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B342203922ED001B568B /* RescentSearch.swift */; };
 		45E7B346203925E5001B568B /* RescentSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */; };
 		45E7B347203925E5001B568B /* RescentSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */; };
@@ -96,10 +98,12 @@
 		453373CF20389725007EF2B2 /* UIView+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extra.swift"; sourceTree = "<group>"; };
 		453373D120389ACB007EF2B2 /* MSVoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSVoteView.xib; sourceTree = "<group>"; };
 		453373D320389DE1007EF2B2 /* String+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extra.swift"; sourceTree = "<group>"; };
-		453373D52038C34B007EF2B2 /* MovieSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResult.swift; sourceTree = "<group>"; };
+		453373D52038C34B007EF2B2 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		459920A32039939D006863BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		459920A52039A02B006863BC /* MovieSearchManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchManagerTests.swift; sourceTree = "<group>"; };
 		459920A92039AF8B006863BC /* MovieImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageCacheTests.swift; sourceTree = "<group>"; };
+		459920AB2039E439006863BC /* Date+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extra.swift"; sourceTree = "<group>"; };
+		459920AF2039F231006863BC /* MovieListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTests.swift; sourceTree = "<group>"; };
 		45E7B342203922ED001B568B /* RescentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearch.swift; sourceTree = "<group>"; };
 		45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearchTableViewCell.swift; sourceTree = "<group>"; };
 		45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RescentSearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				452FE1CD20386A5700FE8847 /* MovieDetailsTests.swift */,
+				459920AF2039F231006863BC /* MovieListTests.swift */,
 				453373C3203888A8007EF2B2 /* MovieSearchRequestTests.swift */,
 				4520DFAA20397E4A002E472E /* MSServiceFetcherTests.swift */,
 				4520DFAC203990CE002E472E /* DataParserTests.swift */,
@@ -209,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				452FE1C4203868DA00FE8847 /* Movie.swift */,
-				453373D52038C34B007EF2B2 /* MovieSearchResult.swift */,
+				453373D52038C34B007EF2B2 /* MovieList.swift */,
 				45E7B342203922ED001B568B /* RescentSearch.swift */,
 				45E7B34A203939D8001B568B /* MovieSearchManager.swift */,
 			);
@@ -223,6 +228,7 @@
 				453373CF20389725007EF2B2 /* UIView+Extra.swift */,
 				453373D320389DE1007EF2B2 /* String+Extra.swift */,
 				4520DFB020399193002E472E /* UIViewController+Extra.swift */,
+				459920AB2039E439006863BC /* Date+Extra.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -411,7 +417,7 @@
 				453373C0203875A5007EF2B2 /* MovieSearchRequest.swift in Sources */,
 				452FE1C7203868EF00FE8847 /* MSBaseViewController.swift in Sources */,
 				45E7B34B203939D8001B568B /* MovieSearchManager.swift in Sources */,
-				453373D62038C34B007EF2B2 /* MovieSearchResult.swift in Sources */,
+				453373D62038C34B007EF2B2 /* MovieList.swift in Sources */,
 				453373BE20387352007EF2B2 /* MSConstants.swift in Sources */,
 				453373D420389DE1007EF2B2 /* String+Extra.swift in Sources */,
 				45E7B343203922ED001B568B /* RescentSearch.swift in Sources */,
@@ -423,6 +429,7 @@
 				4520DFB120399193002E472E /* UIViewController+Extra.swift in Sources */,
 				453373C620388AB4007EF2B2 /* MSBaseTableViewCell.swift in Sources */,
 				453373C820388AE9007EF2B2 /* MSLabel.swift in Sources */,
+				459920AC2039E439006863BC /* Date+Extra.swift in Sources */,
 				453373C2203878FB007EF2B2 /* DataParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459920B02039F231006863BC /* MovieListTests.swift in Sources */,
 				4520DFAB20397E4A002E472E /* MSServiceFetcherTests.swift in Sources */,
 				459920AA2039AF8B006863BC /* MovieImageCacheTests.swift in Sources */,
 				459920A62039A02B006863BC /* MovieSearchManagerTests.swift in Sources */,

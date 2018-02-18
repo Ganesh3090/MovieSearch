@@ -29,7 +29,7 @@ class MovieSearchManagerTests: XCTestCase {
         // Test default value
         XCTAssertEqual(manager.numberOfPages, 1)
         
-        var searchResult = MovieSearchResult()
+        var searchResult = MovieList(dictionary: nil)
         searchResult.numberOfPages = 10
         manager.searchResult = searchResult
         XCTAssertEqual(manager.numberOfPages, 10)
@@ -38,7 +38,7 @@ class MovieSearchManagerTests: XCTestCase {
     func testNextPageAvaiable() {
         let manager = MovieSearchManager.shared
         
-        var searchResult = MovieSearchResult()
+        var searchResult = MovieList(dictionary: nil)
         searchResult.numberOfPages = 10
         manager.searchResult = searchResult
         
@@ -54,7 +54,7 @@ class MovieSearchManagerTests: XCTestCase {
     
     func testResetSearchResult() {
         let manager = MovieSearchManager.shared
-        var searchResult = MovieSearchResult()
+        var searchResult = MovieList(dictionary: nil)
         searchResult.numberOfPages = 10
         manager.searchResult = searchResult
         manager.currentSearchText = "Any Text"
@@ -70,16 +70,16 @@ class MovieSearchManagerTests: XCTestCase {
     func testAddSearchResult() {
         let manager = MovieSearchManager.shared
         
-        var oldResult = MovieSearchResult()
-        let movie1 = Movie(title: "Movie1")
-        let movie2 = Movie(title: "Movie2")
+        var oldResult = MovieList(dictionary: nil)
+        let movie1 = Movie(dictionary: ["title": "Movie1" as AnyObject])
+        let movie2 = Movie(dictionary: ["title": "Movie2" as AnyObject])
         oldResult.results = [movie1, movie2]
         
         manager.searchResult = oldResult
         
-        var newResult = MovieSearchResult()
-        let movie3 = Movie(title: "Movie3")
-        let movie4 = Movie(title: "Movie4")
+        var newResult = MovieList(dictionary: nil)
+        let movie3 = Movie(dictionary: ["title": "Movie3" as AnyObject])
+        let movie4 = Movie(dictionary: ["title": "Movie4" as AnyObject])
         newResult.results = [movie3, movie4]
         
         manager.addSearchResult(searchResult: newResult)
@@ -99,9 +99,9 @@ class MovieSearchManagerTests: XCTestCase {
     func testAddSearchResultWithNilResult() {
         let manager = MovieSearchManager.shared
         
-        var newResult = MovieSearchResult()
-        let movie1 = Movie(title: "Movie1")
-        let movie2 = Movie(title: "Movie2")
+        var newResult = MovieList(dictionary: nil)
+        let movie1 = Movie(dictionary: ["title": "Movie1" as AnyObject])
+        let movie2 = Movie(dictionary: ["title": "Movie2" as AnyObject])
         newResult.results = [movie1, movie2]
         
         manager.addSearchResult(searchResult: newResult)
@@ -119,13 +119,13 @@ class MovieSearchManagerTests: XCTestCase {
     func testAddSearchResultWithNilList() {
         let manager = MovieSearchManager.shared
         
-        var oldResult = MovieSearchResult()
-        let movie1 = Movie(title: "Movie1")
-        let movie2 = Movie(title: "Movie2")
+        var oldResult = MovieList(dictionary: nil)
+        let movie1 = Movie(dictionary: ["title": "Movie1" as AnyObject])
+        let movie2 = Movie(dictionary: ["title": "Movie2" as AnyObject])
         oldResult.results = [movie1, movie2]
         
         manager.searchResult = oldResult
-        let newResult = MovieSearchResult()
+        let newResult = MovieList(dictionary: nil)
         
         manager.addSearchResult(searchResult: newResult)
         

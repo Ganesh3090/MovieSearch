@@ -36,7 +36,7 @@ class MSServiceFetcher: NSObject {
     /// - Parameters:
     ///   - request: The request parameters
     ///   - completion: The movie result. `nil` if there is any error while fetching or parsing the data
-    func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ result: MovieSearchResult?) -> ()) {
+    func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ result: MovieList?) -> ()) {
         self.dataTask?.cancel()
         
         let urlString = self.baseURL + request.stringByAppendingAllParameters()
