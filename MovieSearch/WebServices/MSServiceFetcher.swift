@@ -36,7 +36,7 @@ class MSServiceFetcher: NSObject {
     /// - Parameters:
     ///   - request: The request parameters
     ///   - completion: The movie result. `nil` if there is any error while fetching or parsing the data
-    func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ result: MovieSearchResult?) -> ()) {
+    func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ result: MovieList?) -> ()) {
         self.dataTask?.cancel()
         
         let urlString = self.baseURL + request.stringByAppendingAllParameters()
@@ -72,6 +72,11 @@ class MSServiceFetcher: NSObject {
         dataTask?.resume()
     }
     
+    /// Download the image from server for given url and save into temporary storage
+    ///
+    /// - Parameters:
+    ///   - urlString: The image url string to download the image
+    ///   - completion: After downloaidng informs the coller
     class func downloadImage(urlString: String, completion: @escaping (_ image: UIImage?) -> Void) {
         if let cachedImage = MovieImageCache.shared.imageForUrl(urlString: urlString) {
             completion(cachedImage)

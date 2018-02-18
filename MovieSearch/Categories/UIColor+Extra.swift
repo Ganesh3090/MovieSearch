@@ -8,30 +8,28 @@
 
 import UIKit
 
-enum MSColorStyle: Int {
-    case backgraund
-    case theme
-}
-
 extension UIColor {
     
-    static let border = UIColor(actualRed: 242, actualGreen: 242, actualBlue: 242)
-    
+    /// The background color used in for views
     static let background = UIColor(actualRed: 242, actualGreen: 242, actualBlue: 242)
     
+    /// The app theme color
     static let theme = UIColor(actualRed: 74, actualGreen: 212, actualBlue: 137)
-
-    static let headerText = UIColor.black
-
-    static let subHeaderText = UIColor.black
-    
-    static let bodyText = UIColor.lightGray
 }
 
 extension UIColor {
-
+    
+    // MARK: - Constants
+    
+    /// The max color value
     static let maxColorLength: CGFloat = 255.0
 
+    /// Create `UIColor` from the RGB values
+    ///
+    /// - Parameters:
+    ///   - actualRed: The actual red value
+    ///   - actualGreen: The actual green value
+    ///   - actualBlue: The actual blue value
     convenience init(actualRed: Int, actualGreen: Int, actualBlue: Int) {
         let selfType = type(of: self)
         self.init(red: CGFloat(actualRed)/selfType.maxColorLength,

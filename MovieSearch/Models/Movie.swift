@@ -14,10 +14,10 @@ enum MovieLanguage: String {
     case unknown = "unknown"
 }
 
-struct Movie {
+class Movie {
 
     // The movie title
-    var title: String
+    var title = ""
 
     /// The original movie title
     var originalTitle = ""
@@ -56,12 +56,35 @@ struct Movie {
     var originalLanguage = MovieLanguage.unknown
     
     /// The Movie release date
-    var releaseDate: String?
+    var releaseDate: Date?
+    
+    /// The Movie release date in string format
+    var releaseDateString: String?
+    
+    /// Set `true` when image downloading is in progress
+    var isDownloadingInProgress = false
     
     /// Creates instance of `Movie`
     ///
-    /// - Parameter title: The name of movie
-    init(title: String) {
-        self.title = title
+    /// - Parameter dictionary: The name of movie
+    init(dictionary: [String: AnyObject]) {
+        self.title = dictionary[MovieResultKey.title] as? String ?? self.title
+        self.originalTitle = dictionary[MovieResultKey.originalTitle] as? String ?? self.originalTitle
+        self.overview = dictionary[MovieResultKey.overview] as? String
+        self.voteCount = dictionary[MovieResultKey.voteCount] as? Int ?? self.voteCount
+        self.movieId = dictionary[MovieResultKey.movieId] as? Int ?? self.movieId
+        self.voteAverage = dictionary[MovieResultKey.voteAverage] as? Double ?? self.voteAverage
+        self.popularity = dictionary[MovieResultKey.popularity] as? Double ?? self.popularity
+        self.video = dictionary[MovieResultKey.video] as? Bool ?? self.video
+        self.adult = dictionary[MovieResultKey.adult] as? Bool ?? self.adult
+        self.genreIds = dictionary[MovieResultKey.genreIds] as? [Int]
+        self.posterPath = dictionary[MovieResultKey.posterPath] as? String
+        self.backdropPath = dictionary[MovieResultKey.backdropPath] as? String
+        if let releaseDateString = dictionary[MovieResultKey.releaseDate] as? String {
+            self.releaseDate = Date.dateFromString(dateString: releaseDateString)
+            if let releaseDate = self.releaseDate {
+                self.releaseDateString = Date.stringFromDate(date: releaseDate)
+            }
+        }
     }
 }

@@ -36,7 +36,13 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
     
     func setMoiveDetails(details: Movie) {
         self.nameLabel.text = details.title
-        self.releaseDateLabel.text = "Release on 12/02/2018"
+        
+        if let releaseDateString = details.releaseDateString {
+            self.releaseDateLabel.text = String(localizedKey: "RELEASED_ON") + releaseDateString
+        } else {
+            self.releaseDateLabel.text = String(localizedKey: "RELEASE_DATE_UNKNOWN")
+        }
+        
         self.movieOverviewLabel.text = details.overview
         
         self.voteView.setVoteCount(count: details.voteCount, avarage: details.voteAverage)
@@ -51,8 +57,11 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
             } else {
                 self.activityIndicator.startAnimating()
                 self.moviePosterImageView.image = nil
-                MSServiceFetcher.downloadImage(urlString: imageURLString) { (_) in
-                    
+                if !details.isDownloadingInProgress {
+                    details.isDownloadingInProgress = true
+                    MSServiceFetcher.downloadImage(urlString: imageURLString) { (_) in
+                        details.isDownloadingInProgress = false
+                    }
                 }
             }
         } else {

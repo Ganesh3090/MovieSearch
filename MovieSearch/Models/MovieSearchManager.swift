@@ -35,7 +35,7 @@ class MovieSearchManager {
     }
     
     /// Holds the rescent serach result
-    var searchResult: MovieSearchResult?
+    var searchResult: MovieList?
     
     // MARK: - Intializer
 
@@ -60,8 +60,8 @@ class MovieSearchManager {
     
     /// Add new fetched result into the movie list array
     ///
-    /// - Parameter searchResult: Instance of `MovieSearchResult`
-    func addSearchResult(searchResult: MovieSearchResult) {
+    /// - Parameter searchResult: Instance of `MovieList`
+    func addSearchResult(searchResult: MovieList) {
         self.currentPage = searchResult.pageNumber
 
         guard let oldResult = self.searchResult?.results else {
