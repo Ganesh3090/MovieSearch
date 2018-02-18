@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  MovieSearch
+
+  Created by Ganesh on 2/18/18.
+  Copyright © 2018 Ganesh. All rights reserved.
+*/
+
+// Alert
+
+"SOMETHING_WENT_WRONG" = "Something went wrong";
+"INVALID_API_KEY_MESSAGE" = "Looks like the API key is invalid. Please check and update key!";
+"INVALID_OR_NO_RESPONSE_MESSAGE" = "Not found any result for query: ";
+
+
+"VOTES" = "Votes";
+"NO_VOTES" = "No votes";
+"MOVIE_SEARCH" = "Movie Search";

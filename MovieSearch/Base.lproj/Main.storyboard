@@ -21,6 +21,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jj4-IU-NDh">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="77f-VM-815" customClass="MSRefeshControl" customModule="MovieSearch" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="m6i-4V-c4B"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="jUT-Hr-QSX"/>
@@ -38,10 +43,28 @@
                     </view>
                     <navigationItem key="navigationItem" id="CCN-3j-zW1"/>
                     <connections>
+                        <outlet property="refreshControl" destination="77f-VM-815" id="kTZ-Im-NYJ"/>
+                        <outlet property="searchDisplayController" destination="jPd-sR-dXM" id="vwB-2v-k5Y"/>
                         <outlet property="tableView" destination="jj4-IU-NDh" id="eNb-PP-YUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="QDA-dg-9Fv">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="fir-W0-7P0"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="Jf6-t7-wzU"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="tzu-oT-cgT"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="j6t-Ws-J2i"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="jPd-sR-dXM">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Jto-KP-EeZ"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="d0b-b8-2DG"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="J5u-fp-zx8"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="izT-Xt-DvW"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="33.733133433283363"/>
         </scene>

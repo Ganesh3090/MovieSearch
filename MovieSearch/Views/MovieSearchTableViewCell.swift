@@ -12,7 +12,7 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
 
     static let className = "MovieSearchTableViewCell"
     
-    @IBOutlet weak var adultLabel: MSLabel!
+    @IBOutlet private weak var adultLabel: MSLabel!
     @IBOutlet private weak var movieOverviewLabel: MSLabel!
     @IBOutlet private weak var releaseDateLabel: MSLabel!
     @IBOutlet private weak var nameLabel: MSLabel!
@@ -32,11 +32,25 @@ class MovieSearchTableViewCell: MSBaseTableViewCell {
         self.adultLabel.clipsToBounds = true
     }
     
-    func setMoiveDetails(details: MovieDetails) {
+    func setMoiveDetails(details: Movie) {
         self.nameLabel.text = details.title
         self.releaseDateLabel.text = "Release on 12/02/2018"
+        self.movieOverviewLabel.text = details.overview
         
-        self.voteView.setVoteCount(count: details.votCount, avarage: details.voteAverage)
+        self.voteView.setVoteCount(count: details.voteCount, avarage: details.voteAverage)
         self.adultLabel.isHidden = !details.adult
+        
+        if let backdropPath = details.backdropPath {
+            let imageURLString = MSConfiguration.imageBaseURL + backdropPath
+            
+            if let cachedImage = MovieImageCache.shared.imageForUrl(urlString: imageURLString) {
+                self.moviePosterImageView.image = cachedImage
+            } else {
+                MSServiceFetcher.downloadImage(urlString: imageURLString) { (_) in
+                }
+            }
+        } else {
+            self.moviePosterImageView.image = nil
+        }
     }
 }

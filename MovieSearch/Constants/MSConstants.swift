@@ -19,5 +19,7 @@ struct MSConfiguration {
 
     static let apiKey = "2696829a81b1b5827d515ff121700838"
     
-    static let baseURl = "http://api.themoviedb.org/3/search/movie?"
+    static let baseURL = "http://api.themoviedb.org/3/search/movie?"
+    
+    static let imageBaseURL = "http://image.tmdb.org/t/p/w185"
 }

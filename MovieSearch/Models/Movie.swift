@@ -1,5 +1,5 @@
 //
-//  MovieDetails.swift
+//  Movie.swift
 //  MovieSearch
 //
 //  Created by Ganesh on 2/17/18.
@@ -14,7 +14,7 @@ enum MovieLanguage: String {
     case unknown = "unknown"
 }
 
-struct MovieDetails {
+struct Movie {
 
     // The movie title
     var title: String
@@ -23,16 +23,16 @@ struct MovieDetails {
     var originalTitle = ""
 
     /// Number of votes given by user to movie
-    var votCount = 0
+    var voteCount = 0
     
     /// Unique movie identifier for movie
-    var moviewId = 0
+    var movieId = 0
     
     /// `true` when video available else `false`
     var video = false
     
     /// The average vote given by user
-    var voteAverage = 0
+    var voteAverage = 0.0
     
     /// Popularity of movie
     var popularity = 0.0
@@ -55,7 +55,10 @@ struct MovieDetails {
     /// The original language of movie
     var originalLanguage = MovieLanguage.unknown
     
-    /// Creates instance of `MovieDetails`
+    /// The Movie release date
+    var releaseDate: String?
+    
+    /// Creates instance of `Movie`
     ///
     /// - Parameter title: The name of movie
     init(title: String) {
