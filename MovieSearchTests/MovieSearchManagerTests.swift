@@ -15,8 +15,7 @@ class MovieSearchManagerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let manager = MovieSearchManager.shared
-        manager.searchResult = nil
+        MovieSearchManager.shared.searchResult = nil
     }
     
     override func tearDown() {

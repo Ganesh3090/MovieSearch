@@ -36,6 +36,7 @@
 		453373D62038C34B007EF2B2 /* MovieSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D52038C34B007EF2B2 /* MovieSearchResult.swift */; };
 		459920A42039939D006863BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 459920A32039939D006863BC /* Localizable.strings */; };
 		459920A62039A02B006863BC /* MovieSearchManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459920A52039A02B006863BC /* MovieSearchManagerTests.swift */; };
+		459920AA2039AF8B006863BC /* MovieImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459920A92039AF8B006863BC /* MovieImageCacheTests.swift */; };
 		45E7B343203922ED001B568B /* RescentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B342203922ED001B568B /* RescentSearch.swift */; };
 		45E7B346203925E5001B568B /* RescentSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */; };
 		45E7B347203925E5001B568B /* RescentSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */; };
@@ -98,6 +99,7 @@
 		453373D52038C34B007EF2B2 /* MovieSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResult.swift; sourceTree = "<group>"; };
 		459920A32039939D006863BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		459920A52039A02B006863BC /* MovieSearchManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchManagerTests.swift; sourceTree = "<group>"; };
+		459920A92039AF8B006863BC /* MovieImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageCacheTests.swift; sourceTree = "<group>"; };
 		45E7B342203922ED001B568B /* RescentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearch.swift; sourceTree = "<group>"; };
 		45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearchTableViewCell.swift; sourceTree = "<group>"; };
 		45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RescentSearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				4520DFAA20397E4A002E472E /* MSServiceFetcherTests.swift */,
 				4520DFAC203990CE002E472E /* DataParserTests.swift */,
 				459920A52039A02B006863BC /* MovieSearchManagerTests.swift */,
+				459920A92039AF8B006863BC /* MovieImageCacheTests.swift */,
 				452FE1A8203866AB00FE8847 /* Info.plist */,
 			);
 			path = MovieSearchTests;
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4520DFAB20397E4A002E472E /* MSServiceFetcherTests.swift in Sources */,
+				459920AA2039AF8B006863BC /* MovieImageCacheTests.swift in Sources */,
 				459920A62039A02B006863BC /* MovieSearchManagerTests.swift in Sources */,
 				453373C4203888A8007EF2B2 /* MovieSearchRequestTests.swift in Sources */,
 				4520DFAD203990CE002E472E /* DataParserTests.swift in Sources */,
