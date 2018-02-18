@@ -36,7 +36,7 @@ class MSVoteView: UIView {
         self.heightAnchor.constraint(equalToConstant: 66.0).isActive = true
     }
     
-    func setVoteCount(count: Int, avarage: Int) {
+    func setVoteCount(count: Int, avarage: Double) {
         self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
        
         if count > 0 {
@@ -44,7 +44,7 @@ class MSVoteView: UIView {
         } else {
             self.voteLabel.text =  String(localizedKey: "no votes")
         }
-        
-        self.voteAvarageLabel.text = String(avarage) + "%"
+        let averageInPercent = Int(avarage * 10)
+        self.voteAvarageLabel.text = String(averageInPercent) + "%"
     }
 }

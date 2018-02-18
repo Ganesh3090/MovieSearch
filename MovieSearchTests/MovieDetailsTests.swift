@@ -1,5 +1,5 @@
 //
-//  MovieDetailsTests.swift
+//  MovieTests.swift
 //  MovieSearchTests
 //
 //  Created by Ganesh on 2/17/18.
@@ -10,23 +10,23 @@ import XCTest
 
 @testable import MovieSearch
 
-class MovieDetailsTests: XCTestCase {
+class MovieTests: XCTestCase {
     
-    func testMovieDetailsInit() {
+    func testMovieInit() {
         
-        let movie = MovieDetails(title: "title")
+        let movie = Movie(title: "title")
         
         XCTAssertEqual(movie.title, "title")
     }
     
     func testDefaultValues() {
         
-        let movie = MovieDetails(title: "title")
+        let movie = Movie(title: "title")
         
         XCTAssertEqual(movie.title, "title")
         XCTAssertEqual(movie.originalTitle, "")
-        XCTAssertEqual(movie.votCount, 0)
-        XCTAssertEqual(movie.moviewId, 0)
+        XCTAssertEqual(movie.voteCount, 0)
+        XCTAssertEqual(movie.movieId, 0)
         XCTAssertEqual(movie.video, false)
         XCTAssertEqual(movie.voteAverage, 0)
         XCTAssertEqual(movie.popularity, 0.0)

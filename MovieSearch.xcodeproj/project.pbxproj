@@ -12,7 +12,7 @@
 		452FE199203866AB00FE8847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452FE198203866AB00FE8847 /* Assets.xcassets */; };
 		452FE19C203866AB00FE8847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452FE19A203866AB00FE8847 /* LaunchScreen.storyboard */; };
 		452FE1B2203866AB00FE8847 /* MovieSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452FE1B1203866AB00FE8847 /* MovieSearchUITests.swift */; };
-		452FE1C5203868DA00FE8847 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452FE1C4203868DA00FE8847 /* MovieDetails.swift */; };
+		452FE1C5203868DA00FE8847 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452FE1C4203868DA00FE8847 /* Movie.swift */; };
 		452FE1C7203868EF00FE8847 /* MSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452FE1C6203868EF00FE8847 /* MSBaseViewController.swift */; };
 		452FE1CA2038692300FE8847 /* UIColor+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452FE1C92038692300FE8847 /* UIColor+Extra.swift */; };
 		452FE1CC203869AD00FE8847 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452FE1CB203869AD00FE8847 /* MovieSearchViewController.swift */; };
@@ -30,6 +30,11 @@
 		453373D020389725007EF2B2 /* UIView+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373CF20389725007EF2B2 /* UIView+Extra.swift */; };
 		453373D220389ACB007EF2B2 /* MSVoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453373D120389ACB007EF2B2 /* MSVoteView.xib */; };
 		453373D420389DE1007EF2B2 /* String+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D320389DE1007EF2B2 /* String+Extra.swift */; };
+		453373D62038C34B007EF2B2 /* MovieSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453373D52038C34B007EF2B2 /* MovieSearchResult.swift */; };
+		45E7B343203922ED001B568B /* RescentSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B342203922ED001B568B /* RescentSearch.swift */; };
+		45E7B346203925E5001B568B /* RescentSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */; };
+		45E7B347203925E5001B568B /* RescentSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */; };
+		45E7B34920393263001B568B /* MovieImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7B34820393263001B568B /* MovieImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +66,7 @@
 		452FE1AD203866AB00FE8847 /* MovieSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		452FE1B1203866AB00FE8847 /* MovieSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchUITests.swift; sourceTree = "<group>"; };
 		452FE1B3203866AB00FE8847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		452FE1C4203868DA00FE8847 /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		452FE1C4203868DA00FE8847 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		452FE1C6203868EF00FE8847 /* MSBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSBaseViewController.swift; sourceTree = "<group>"; };
 		452FE1C92038692300FE8847 /* UIColor+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extra.swift"; sourceTree = "<group>"; };
 		452FE1CB203869AD00FE8847 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +84,11 @@
 		453373CF20389725007EF2B2 /* UIView+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extra.swift"; sourceTree = "<group>"; };
 		453373D120389ACB007EF2B2 /* MSVoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSVoteView.xib; sourceTree = "<group>"; };
 		453373D320389DE1007EF2B2 /* String+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extra.swift"; sourceTree = "<group>"; };
+		453373D52038C34B007EF2B2 /* MovieSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchResult.swift; sourceTree = "<group>"; };
+		45E7B342203922ED001B568B /* RescentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearch.swift; sourceTree = "<group>"; };
+		45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescentSearchTableViewCell.swift; sourceTree = "<group>"; };
+		45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RescentSearchTableViewCell.xib; sourceTree = "<group>"; };
+		45E7B34820393263001B568B /* MovieImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +185,9 @@
 		452FE1C3203868C000FE8847 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				452FE1C4203868DA00FE8847 /* MovieDetails.swift */,
+				452FE1C4203868DA00FE8847 /* Movie.swift */,
+				453373D52038C34B007EF2B2 /* MovieSearchResult.swift */,
+				45E7B342203922ED001B568B /* RescentSearch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +208,7 @@
 				453373BA20387302007EF2B2 /* MSServiceFetcher.swift */,
 				453373BF203875A5007EF2B2 /* MovieSearchRequest.swift */,
 				453373C1203878FB007EF2B2 /* DataParser.swift */,
+				45E7B34820393263001B568B /* MovieImageCache.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -206,6 +219,8 @@
 				453373C520388AB4007EF2B2 /* MSBaseTableViewCell.swift */,
 				453373C920388C93007EF2B2 /* MovieSearchTableViewCell.swift */,
 				453373CA20388C93007EF2B2 /* MovieSearchTableViewCell.xib */,
+				45E7B344203925E5001B568B /* RescentSearchTableViewCell.swift */,
+				45E7B345203925E5001B568B /* RescentSearchTableViewCell.xib */,
 				453373C720388AE9007EF2B2 /* MSLabel.swift */,
 				453373CD203894D1007EF2B2 /* MSVoteView.swift */,
 				453373D120389ACB007EF2B2 /* MSVoteView.xib */,
@@ -328,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E7B347203925E5001B568B /* RescentSearchTableViewCell.xib in Resources */,
 				452FE19C203866AB00FE8847 /* LaunchScreen.storyboard in Resources */,
 				453373D220389ACB007EF2B2 /* MSVoteView.xib in Resources */,
 				452FE199203866AB00FE8847 /* Assets.xcassets in Resources */,
@@ -357,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E7B346203925E5001B568B /* RescentSearchTableViewCell.swift in Sources */,
 				452FE192203866AB00FE8847 /* AppDelegate.swift in Sources */,
 				453373D020389725007EF2B2 /* UIView+Extra.swift in Sources */,
 				453373CE203894D1007EF2B2 /* MSVoteView.swift in Sources */,
@@ -364,10 +381,13 @@
 				453373CB20388C93007EF2B2 /* MovieSearchTableViewCell.swift in Sources */,
 				453373C0203875A5007EF2B2 /* MovieSearchRequest.swift in Sources */,
 				452FE1C7203868EF00FE8847 /* MSBaseViewController.swift in Sources */,
+				453373D62038C34B007EF2B2 /* MovieSearchResult.swift in Sources */,
 				453373BE20387352007EF2B2 /* MSConstants.swift in Sources */,
 				453373D420389DE1007EF2B2 /* String+Extra.swift in Sources */,
-				452FE1C5203868DA00FE8847 /* MovieDetails.swift in Sources */,
+				45E7B343203922ED001B568B /* RescentSearch.swift in Sources */,
+				452FE1C5203868DA00FE8847 /* Movie.swift in Sources */,
 				452FE1CA2038692300FE8847 /* UIColor+Extra.swift in Sources */,
+				45E7B34920393263001B568B /* MovieImageCache.swift in Sources */,
 				452FE1CC203869AD00FE8847 /* MovieSearchViewController.swift in Sources */,
 				453373C620388AB4007EF2B2 /* MSBaseTableViewCell.swift in Sources */,
 				453373C820388AE9007EF2B2 /* MSLabel.swift in Sources */,

@@ -32,12 +32,11 @@ class MSServiceFetcher: NSObject {
     ///
     /// - Parameters:
     ///   - request: The request parameters
-    ///   - session: Instance of `URLSession`. Used for unit tests cases only
     ///   - completion: The movie result. `nil` if there is any error while fetching or parsing the data
-    func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ movieList: [MovieDetails]?) -> ()) {
+    func fetchSearchResult(request: MovieSearchRequest, completion: @escaping (_ result: MovieSearchResult?) -> ()) {
         self.dataTask?.cancel()
         
-        let urlString = MSConfiguration.baseURl + request.stringByAppendingAllParameters()
+        let urlString = MSConfiguration.baseURL + request.stringByAppendingAllParameters()
         
         guard let url = URL(string: urlString) else { return }
         
@@ -51,12 +50,33 @@ class MSServiceFetcher: NSObject {
             
             guard let data = jsonData else { return }
             
-            let movieList = DataParser.parseMovieSearchJSONData(data: data)
+            let result = DataParser.parseMovieSearchJSONData(data: data)
             
             DispatchQueue.main.async {
-                completion(movieList)
+                completion(result)
             }
         }
         dataTask?.resume()
+    }
+    
+    class func downloadImage(urlString: String, completion: @escaping (_ image: UIImage?) -> Void) {
+        if let cachedImage = MovieImageCache.shared.imageForUrl(urlString: urlString) {
+            completion(cachedImage)
+        } else {
+            guard let url = URL(string: urlString) else { return }
+            let dataTask = URLSession.shared.dataTask(with: url) { imageData, response, error in
+                DispatchQueue.main.async {
+                    if error != nil {
+                        completion(nil)
+                    } else if let data = imageData, let image = UIImage(data: data) {
+                        MovieImageCache.shared.cacheImage(image: image, urlString: urlString)
+                        completion(image)
+                    } else {
+                        completion(nil)
+                    }
+                }
+            }
+            dataTask.resume()
+        }
     }
 }
